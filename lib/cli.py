@@ -1,5 +1,6 @@
 
 from helpers import (
+
     exit_program,
     list_departments,
     find_department_by_name,
@@ -20,7 +21,9 @@ from helpers import (
 def main():
     while True:
         menu()
-        choice = input("> ")
+        choice = input("> ").strip()
+        print()  # Add spacing for better UX
+
         if choice == "0":
             exit_program()
         elif choice == "1":
@@ -50,7 +53,7 @@ def main():
         elif choice == "13":
             list_department_employees()
         else:
-            print("Invalid choice")
+            print("Invalid choice. Please try again.\n")
 
 
 def menu():
@@ -58,17 +61,18 @@ def menu():
     print("0. Exit the program")
     print("1. List all departments")
     print("2. Find department by name")
-    print("3. Find department by id")
-    print("4: Create department")
-    print("5: Update department")
-    print("6: Delete department")
+    print("3. Find department by ID")
+    print("4. Create a department")
+    print("5. Update a department")
+    print("6. Delete a department")
     print("7. List all employees")
     print("8. Find employee by name")
-    print("9. Find employee by id")
-    print("10: Create employee")
-    print("11: Update employee")
-    print("12: Delete employee")
-    print("13: List all employees in a department")
+    print("9. Find employee by ID")
+    print("10. Create an employee")
+    print("11. Update an employee")
+    print("12. Delete an employee")
+    print("13. List all employees in a department")
+    print()
 
 
 if __name__ == "__main__":
